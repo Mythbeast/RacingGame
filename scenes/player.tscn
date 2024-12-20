@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://buvcruwwghpbq"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_h2hqr"]
+[ext_resource type="PackedScene" uid="uid://54rp8r45te6" path="res://scenes/acceleration_particles.tscn" id="2_f4bbw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0ni0u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_67tur"]
+radius = 17.0
+height = 82.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_h2hqr")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(84, 34.2222)
+texture = SubResource("PlaceholderTexture2D_0ni0u")
+
+[node name="AccelerationParticles" parent="." instance=ExtResource("2_f4bbw")]
+z_index = -1
+position = Vector2(-43, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 4.71239
+shape = SubResource("CapsuleShape2D_67tur")

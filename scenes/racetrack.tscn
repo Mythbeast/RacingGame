@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmsk4f5x8q77p"]
+
+[ext_resource type="Script" path="res://scripts/racetrack.gd" id="1_6hoh6"]
+[ext_resource type="Script" path="res://scripts/scaled_path2d.gd" id="2_nqkqu"]
+
+[sub_resource type="Curve2D" id="Curve2D_x2siw"]
+_data = {
+"points": PackedVector2Array(-192.843, 4.75198, 192.843, -4.75198, 1065, 263, -186.455, -61.1908, 186.455, 61.1908, 1445, 201, 22.9099, -131.635, -22.9099, 131.635, 1670, 642, 206.214, 1.85706, -206.214, -1.85706, 1253, 826, 222.342, 110.638, -222.342, -110.638, 576, 864, -2.93862, 107.602, 2.93862, -107.602, 369, 465, -192.085, 50.3584, 192.085, -50.3584, 559, 191, -257.314, -11.7725, 257.314, 11.7725, 1065, 263)
+}
+point_count = 8
+
+[node name="Racetrack" type="Node2D"]
+script = ExtResource("1_6hoh6")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_x2siw")
+script = ExtResource("2_nqkqu")
+point_scales = PackedFloat32Array(0.75, 1.25, 1.5, 1, 0.5, 1.5, 1.75)
